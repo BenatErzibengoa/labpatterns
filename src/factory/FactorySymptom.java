@@ -10,8 +10,6 @@ import domain.Symptom;
 
 public class FactorySymptom {
 
-	
-	
 	public Symptom createSymptom(String symptomName) {
 	    List<String> impact5 = Arrays.asList("fiebre", "tos seca", "astenia","expectoracion");
 	    List<Double> index5 = Arrays.asList(87.9, 67.7, 38.1, 33.4);
