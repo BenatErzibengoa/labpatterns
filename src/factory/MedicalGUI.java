@@ -49,6 +49,7 @@ public class  MedicalGUI extends JFrame {
 		
 		
 		
+		
 		JButton btnNewButton = new JButton("Add Symptom");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
