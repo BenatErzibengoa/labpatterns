@@ -12,6 +12,16 @@ import domain.Symptom;
 
 public class FactorySymptom {
 	
+    private static FactorySymptom instance;
+    private FactorySymptom() {}
+    
+    public static FactorySymptom getInstance() {
+        if (instance == null) {
+            instance = new FactorySymptom();
+        }
+        return instance;
+    }
+    
     private static Map<String, Symptom> cache = new HashMap<>(); //Estatikoa denez nahiz eta 2 factorysymptom instantzia egon cache berdina erabiliko dute
 
 

@@ -7,7 +7,7 @@ import factory.FactorySymptom;
 
 public class Main {
 	public static void main(String	args[]){
-		FactorySymptom fs= new FactorySymptom();
+		FactorySymptom fs=  FactorySymptom.getInstance();
 		Observable	pacient1=new	Covid19Pacient("ekaitz",	35, fs);
 		new	PacientObserverGUI	(pacient1);
 		new	PacientThermometerGUI	(pacient1);

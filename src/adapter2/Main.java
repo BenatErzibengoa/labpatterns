@@ -7,7 +7,7 @@ public class Main {
 	
 
 	public static void main(String[] args) {
-		FactorySymptom fs= new FactorySymptom();
+		FactorySymptom fs= FactorySymptom.getInstance();
 		Covid19Pacient pacient=new Covid19Pacient("aitor", 35,fs);
 		
 		pacient.addSymptomByName("disnea", 2);

@@ -18,7 +18,7 @@ import factory.FactorySymptom;
 	public class Main {
 
 		public static void main(String[] args) {
-			FactorySymptom fs= new FactorySymptom();
+			FactorySymptom fs= FactorySymptom.getInstance();
 			Covid19Pacient p=new Covid19Pacient("Ane", 29,fs);
 			p.addSymptom(new Symptom("s1", 10, 20), 1);
 			p.addSymptom(new Symptom("s2", 10, 11), 2);
