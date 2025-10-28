@@ -13,7 +13,11 @@ import domain.Symptom;
 public class FactorySymptom {
 	
     private static FactorySymptom instance;
-    private FactorySymptom() {}
+    private Map<String, Symptom> symptoms;
+
+    private FactorySymptom() {
+        symptoms = new HashMap<>();
+    }
     
     public static FactorySymptom getInstance() {
         if (instance == null) {
@@ -22,12 +26,10 @@ public class FactorySymptom {
         return instance;
     }
     
-    private static Map<String, Symptom> cache = new HashMap<>(); //Estatikoa denez nahiz eta 2 factorysymptom instantzia egon cache berdina erabiliko dute
-
 
 	public Symptom createSymptom(String symptomName) {
-		  if (cache.containsKey(symptomName)) {
-	            return cache.get(symptomName);
+		  if (symptoms.containsKey(symptomName)) {
+	            return symptoms.get(symptomName);
 	        }
 	    List<String> impact5 = Arrays.asList("fiebre", "tos seca", "astenia","expectoracion");
 	    List<Double> index5 = Arrays.asList(87.9, 67.7, 38.1, 33.4);
@@ -52,7 +54,7 @@ public class FactorySymptom {
 	    	if (digestiveSymptom.contains(symptomName)) sintoma = new DigestiveSymptom(symptomName,(int)index, impact);
 	    	if (neuroMuscularSymptom.contains(symptomName)) sintoma = new NeuroMuscularSymptom(symptomName,(int)index, impact);
 	    	if (respiratorySymptom.contains(symptomName)) sintoma = new RespiratorySymptom(symptomName,(int)index, impact);
-	    	cache.put(symptomName, sintoma);
+	    	symptoms.put(symptomName, sintoma);
 	    	return sintoma;
 	    }
 	    return null;		
